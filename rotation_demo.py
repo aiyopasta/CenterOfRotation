@@ -56,7 +56,7 @@ def update(dt_):
 
     # Animate using it
     final_theta = np.pi / 6.0  # TODO: Set the desired rotation angle here!
-    theta = 2.0 * final_theta * ease_inout(t)
+    theta = final_theta * ease_inout(t)
 
 
 # APPLE COLORS!
