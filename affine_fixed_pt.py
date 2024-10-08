@@ -1,5 +1,9 @@
-import os
+# TODO:
+# (1) The maps explored here are only affine maps in SE(2), i.e. a rot + translation. How about affine maps
+#     in general? Which of them have fixed points?
+# (2) Is every non-translational element in SE(2) fully determined by its fixed point?
 
+import os
 import numpy as np
 import pyglet
 from pyglet.gl import *
@@ -56,8 +60,8 @@ def triangle(t_):
 
 
 # Define affine map # TODO: THESE ARE THE ONES TO PLAY AROUND WITH!
-final_theta = np.pi / 2.25
-final_a = np.array([-50.0, -300.0])
+final_theta = np.pi / 3.0
+final_a = np.array([-100.0, -300.0])
 
 
 # Animation parameters
@@ -149,7 +153,7 @@ def on_draw():
     # Display angle and translation text
     cols = [colors['mint'], colors['mint'], colors['yellow']]
     for i, text in enumerate(["φ=" + str(np.round(theta / np.pi, 3)) + 'π',
-                              'a=' + str(a),
+                              'a=' + str(np.round(a, 1)),
                               'fixed point:' + str(np.round(c, 3))]):
         col = cols[i]
         label = pyglet.text.Label(text,

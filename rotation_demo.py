@@ -55,7 +55,7 @@ def update(dt_):
     t = min(max(t + dt, 0.0), 1.0)
 
     # Animate using it
-    final_theta = np.pi / 6.0  # TODO: Set the desired rotation angle here!
+    final_theta = np.pi / 3.0  # TODO: Set the desired rotation angle here!
     theta = final_theta * ease_inout(t)
 
 
